@@ -1,0 +1,136 @@
+
+config dnsmasq
+	option domainneeded '1'
+	option localise_queries '1'
+	option rebind_protection '1'
+	option rebind_localhost '1'
+	option local '/lan/'
+	option domain 'lan'
+	option expandhosts '1'
+	option authoritative '1'
+	option readethers '1'
+	option leasefile '/tmp/dhcp.leases'
+	option resolvfile '/tmp/resolv.conf.d/resolv.conf.auto'
+	option nonwildcard '1'
+	option localservice '1'
+	option filter_aaaa '1'
+	option localuse '1'
+	option noresolv '0'
+
+config dhcp 'lan'
+	option interface 'lan'
+	option start '100'
+	option leasetime '12h'
+	option limit '200'
+	option force '1'
+	list dhcp_option '6,114.114.114.114,223.5.5.5'
+
+config dhcp 'wan'
+	option interface 'wan'
+	option ignore '1'
+
+config srvhost
+	option srv '_vlmcs._tcp'
+	option target 'LEDE'
+	option port '1688'
+	option class '0'
+	option weight '100'
+
+config host
+	option dns '1'
+	option leasetime 'infinite'
+	option name '8700K'
+	option mac '18:31:bf:26:14:2a'
+	option ip '192.168.50.99'
+
+config host
+	option name 'vivo-Phone'
+	option dns '1'
+	option mac '70:78:8b:2f:94:40'
+	option ip '192.168.50.98'
+	option leasetime 'infinite'
+
+config host
+	option name 'LeTV'
+	option dns '1'
+	option mac 'b8:fc:9a:3e:d2:b4'
+	option ip '192.168.50.97'
+	option leasetime 'infinite'
+
+config host
+	option name 'Switch'
+	option dns '1'
+	option mac '98:e8:fa:35:bb:25'
+	option ip '192.168.50.96'
+	option leasetime 'infinite'
+
+config host
+	option name 'Lenovo'
+	option dns '1'
+	option mac '34:cf:f6:13:c9:6e'
+	option ip '192.168.50.95'
+	option leasetime 'infinite'
+
+config host
+	option name 'P40-Phone'
+	option dns '1'
+	option mac '92:0a:68:ea:43:a8'
+	option ip '192.168.50.94'
+	option leasetime 'infinite'
+
+config host
+	option name 'Xiaodu'
+	option dns '1'
+	option mac '88:2d:53:99:b4:21'
+	option ip '192.168.50.93'
+	option leasetime 'infinite'
+
+config host
+	option name 'OPPL-Light'
+	option dns '1'
+	option mac '54:48:e6:02:73:4f'
+	option ip '192.168.50.92'
+	option leasetime 'infinite'
+
+config host
+	option name 'Power-strip-1'
+	option dns '1'
+	option mac '88:97:46:0e:86:41'
+	option ip '192.168.50.91'
+	option leasetime 'infinite'
+
+config host
+	option name 'Power-strip-2'
+	option dns '1'
+	option mac '88:97:46:0a:ae:8d'
+	option ip '192.168.50.90'
+	option leasetime 'infinite'
+
+config host
+	option name 'R7000'
+	option dns '1'
+	option mac 'e4:f4:c6:05:f5:72'
+	option ip '192.168.50.5'
+	option leasetime 'infinite'
+
+config host
+	option name 'DiskStation'
+	option dns '1'
+	option mac '00:11:32:2c:a6:03'
+	option ip '192.168.50.4'
+	option leasetime 'infinite'
+
+config host
+	option name '8700K-wifi'
+	option dns '1'
+	option mac '8c:c6:81:18:ab:f0'
+	option ip '192.168.50.100'
+	option leasetime 'infinite'
+
+config host
+	option name 'GoogleTV'
+	option dns '1'
+	option mac '14:c1:4e:37:db:4b'
+	option ip '192.168.50.103'
+	option leasetime 'infinite'
+
